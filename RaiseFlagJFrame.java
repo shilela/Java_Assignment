@@ -1,5 +1,3 @@
-package raiseFlag;
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -7,8 +5,8 @@ import javax.swing.event.*;
 
 public class RaiseFlagJFrame extends JFrame implements ChangeListener{
 
-	private FlagCanvas canvas; //»­²¼
-	private JSpinner spinner; //Î¢µ÷
+	private FlagCanvas canvas; //ç”»å¸ƒ
+	private JSpinner spinner; //å¾®è°ƒ
 	
 	public RaiseFlagJFrame()
 	{
@@ -21,13 +19,13 @@ public class RaiseFlagJFrame extends JFrame implements ChangeListener{
 		JPanel panel = new JPanel();
 		this.add(panel,"South");
 		panel.add(new JLabel("Delay"));
-		SpinnerNumberModel model = new SpinnerNumberModel(50, 10, 300, 10); //³õÊ¼Öµ£¬×îĞ¡Öµ£¬×î´óÖµ£¬²½³¤
+		SpinnerNumberModel model = new SpinnerNumberModel(50, 10, 300, 10); //åˆå§‹å€¼ï¼Œæœ€å°å€¼ï¼Œæœ€å¤§å€¼ï¼Œæ­¥é•¿
 		this.spinner = new JSpinner(model);
-		this.spinner.addChangeListener(this); //Ìí¼ÓChangeListener¼àÌıÆ÷
+		this.spinner.addChangeListener(this); //æ·»åŠ ChangeListenerç›‘å¬å™¨
 		panel.add(this.spinner);
 		this.setVisible(true);
 	}
-	public void stateChanged(ChangeEvent ev) //ChangeListener¼àÌıÆ÷
+	public void stateChanged(ChangeEvent ev) //ChangeListenerç›‘å¬å™¨
 	{
 		this.canvas.setDelay(Integer.parseInt(""+this.spinner.getValue()));
 	}
@@ -40,7 +38,7 @@ public class RaiseFlagJFrame extends JFrame implements ChangeListener{
 	{
 		private ObjectInfo flagInfo, sunInfo;
 		private Timer timer;
-		private class ObjectInfo //Ë½ÓĞÄÚ²¿Àà
+		private class ObjectInfo //ç§æœ‰å†…éƒ¨ç±»
 		{
 			int x, y;
 			Color color;
@@ -58,7 +56,7 @@ public class RaiseFlagJFrame extends JFrame implements ChangeListener{
 			timer = new Timer(delay, this);
 			timer.start();
 		}
-		public void setDelay(int delay) //timerË½ÓĞ£¬ËùÒÔÊ¹ÓÃ¹«ÓĞµÄsetDelayº¯Êı£¬À´ÈÃÍâ²¿µ÷ÕûDelayÖµ
+		public void setDelay(int delay) //timerç§æœ‰ï¼Œæ‰€ä»¥ä½¿ç”¨å…¬æœ‰çš„setDelayå‡½æ•°ï¼Œæ¥è®©å¤–éƒ¨è°ƒæ•´Delayå€¼
 		{
 			timer.setDelay(delay);
 		}
@@ -94,7 +92,7 @@ public class RaiseFlagJFrame extends JFrame implements ChangeListener{
 				}
 			}
 		}
-		public void actionPerformed(ActionEvent ev) //repaint()º¯ÊıÖØ»­
+		public void actionPerformed(ActionEvent ev) //repaint()å‡½æ•°é‡ç”»
 		{
 			repaint();
 		}
