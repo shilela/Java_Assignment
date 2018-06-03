@@ -10,7 +10,7 @@ public class Trans {
 			return "太大了";
 		else
 		{
-			for(int i = 1;num.length() - i >= 0;i++)
+			for(int i = 1;i <= num.length() ;i++)
 			{
 				trans = b[(int)(num.charAt(num.length() - i))-48] + c[i] + trans;
 			}
