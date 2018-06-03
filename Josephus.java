@@ -19,12 +19,12 @@ public class Josephus {
 		while(this.total > 1)
 		{
 			this.no = (this.no + this.d) % this.total;
-			System.out.println(this.ring[this.no]+"±»É±ËÀ");
+			System.out.println(this.ring[this.no]+"è¢«æ€æ­»");
 			for(int i = this.no;i < this.total - 1;i++)
 				this.ring[i] = this.ring[i+1];
 			this.total--;
 		}
-		System.out.println(this.ring[0]+"´æ»î");
+		System.out.println(this.ring[0]+"å­˜æ´»");
 	}
 	public static void main(String[] args) 
 	{
