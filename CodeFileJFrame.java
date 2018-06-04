@@ -79,22 +79,22 @@ public class CodeFileJFrame extends JFrame implements ActionListener
             try {
 				encode();
 				jdialog.show("1.txt has been encoded into 2.txt");
+				encodeButton.setEnabled(false);
+            			decodeButton.setEnabled(true);
 			} catch (IOException e) {
 				jdialog.show("1.txt can't find");
 			}
-            encodeButton.setEnabled(false);
-            decodeButton.setEnabled(true);
         }
         else if(ev.getSource() == decodeButton)
         {
             try {
 				decode();
 				jdialog.show("2.txt has been decoded into 3.txt");
+				encodeButton.setEnabled(true);
+            			decodeButton.setEnabled(false);
 			} catch (IOException e) {
 				jdialog.show("2.txt can't find");
 			}
-            encodeButton.setEnabled(true);
-            decodeButton.setEnabled(false);
         }
     }
     public static void main(String[] args) 
